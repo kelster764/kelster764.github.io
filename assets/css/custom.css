@@ -1,0 +1,25 @@
+
+/* Make the entire Blowfish feature card clickable */
+
+.grid-balance > article.group {
+    position: relative;
+}
+
+.grid-balance > article.group > a {
+    position: static;
+}
+
+.grid-balance > article.group > a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* Keyboard accessibility */
+.grid-balance > article.group > a:focus-visible::after {
+    outline: 3px solid #2563eb;
+    outline-offset: 4px;
+    border-radius: 16px;
+}
