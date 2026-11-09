@@ -1,7 +1,8 @@
-it's me ian fixing your website lolol
+Hello there! I am a game designer and programmer with an artistic background in Illustration and shading.
 {{< feature-grid columns="3" >}}
 
-{{< feature icon="gamepad-2" title="Lantern of Souls" url="/lantern_of_souls/" label="Explore Game" >}}
+{{< feature icon="ghost" title="Lantern of Souls" url="/lantern_of_souls/" label="Explore Game" >}}
+![assets](finalfishrender.png)
 Discover Lantern of Souls and learn about the project.
 {{< /feature >}}
 
@@ -9,8 +10,9 @@ Discover Lantern of Souls and learn about the project.
 Discover Cupid Shooter and learn about the project.
 {{< /feature >}}
 
-{{< feature icon="skull" title="Bonevoyage" url="/bonevoyage/" label="Explore Game" >}}
+{{< feature icon="skull-crossbones" title="Bonevoyage" url="/bonevoyage/" label="Explore Game" >}}
 Discover Bonevoyage and learn about the project.
 {{< /feature >}}
 
 {{< /feature-grid >}}
+

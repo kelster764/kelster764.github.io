@@ -23,3 +23,14 @@
     outline-offset: 4px;
     border-radius: 16px;
 }
+
+
+section.prose:has(> .not-prose.grid-balance-3) {
+  max-width: none;
+}
+
+section.prose:has(> .not-prose.grid-balance-3) > .not-prose.grid-balance-3 {
+  width: 100%;
+}
+
+/* Keep the intro paragraph at a readable line length */
