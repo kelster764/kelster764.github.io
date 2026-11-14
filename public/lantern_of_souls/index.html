@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=56560&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62444&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -15,8 +15,8 @@
 
   
   
-    <title> &middot; Kelly Harmon</title>
-    <meta name="title" content=" &middot; Kelly Harmon">
+    <title>Lantern of Souls &middot; Kelly Harmon</title>
+    <meta name="title" content="Lantern of Souls &middot; Kelly Harmon">
   
 
   
@@ -34,7 +34,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:56560/lantern_of_souls/">
+  <link rel="canonical" href="http://localhost:62444/lantern_of_souls/">
   
   
   
@@ -44,15 +44,15 @@
   
 
   
-  <meta property="og:url" content="http://localhost:56560/lantern_of_souls/">
+  <meta property="og:url" content="http://localhost:62444/lantern_of_souls/">
 	<meta property="og:site_name" content="Kelly Harmon">
-	<meta property="og:title" content="Kelly Harmon">
+	<meta property="og:title" content="Lantern of Souls">
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 
   
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Kelly Harmon">
+	<meta name="twitter:title" content="Lantern of Souls">
 
   
   
@@ -99,8 +99,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.92803a12d77ae877ce9f61034d90f758868a1dbc67595554f5cdf9654ea65f9de254277e98e58820b3450402100542a1b03e6a8ef0099ca05999ea8d15257b38.css"
-    integrity="sha512-koA6Etd66HfOn2EDTZD3WIaKHbxnWVVU9c35ZU6mX53iVCd&#43;mOWIILNFBAIQBUKhsD5qjvAJnKBZmeqNFSV7OA==">
+    href="/css/main.bundle.min.2701053e04355d05aece9d1ded6d746dbb3306eaefaad9ce6e0f5e6902c95bc888ec793e539635d7969ef040c4475d10c7e2613c0e3053e6979f569c45d167f7.css"
+    integrity="sha512-JwEFPgQ1XQWuzp0d7W10bbszBurvqtnObg9eaQLJW8iI7Hk&#43;U5Y115ae8EDER10Qx&#43;JhPA4wU&#43;aXn1acRdFn9w==">
 
   
   
@@ -216,11 +216,11 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "",
-    "headline": "",
+    "name": "Lantern of Souls",
+    "headline": "Lantern of Souls",
     
     "inLanguage": "en",
-    "url" : "http://localhost:56560/lantern_of_souls/",
+    "url" : "http://localhost:62444/lantern_of_souls/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -233,8 +233,8 @@
     
     
     
-    "mainEntityOfPage": "http://localhost:56560/lantern_of_souls/",
-    "wordCount":  2 
+    "mainEntityOfPage": "http://localhost:62444/lantern_of_souls/",
+    "wordCount":  846 
   }]
   </script>
 
@@ -264,6 +264,10 @@
 
 
 
+
+  
+    
+  
 
 
 
@@ -408,7 +412,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        
+        Lantern of Souls
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -433,17 +437,11 @@
   
 
   
-    
-  
 
   
 
   
-    
-  
 
-  
-    
   
 
   
@@ -459,8 +457,6 @@
 
   <div class="flex flex-row flex-wrap items-center">
     
-    
-      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>2 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -522,7 +518,661 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>your mama</p>
+          
+<h2 class="relative group">What does our camera do?
+    <div id="what-does-our-camera-do" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-does-our-camera-do" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Lantern of Souls is our current senior capstone, and I was tasked with designing the custom camera manager that fit our needs.
+Our camera is a dynamic 3rd person camera with our player on the third, and his soul to his side.
+The camera needed to be able to handle:</p>
+<ul>
+<li>Smoothly springarming against walls but not smaller objects</li>
+<li>switching between our dynamic camera to fixed cameras</li>
+<li>swtiching to first person within cracks, and allowing the player to look around smoothly</li>
+<li>switching to cinematics such as dramatic quick time events</li>
+</ul>
+
+<h2 class="relative group">Design of Springarm
+    <div id="design-of-springarm" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#design-of-springarm" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="new%20springarm.gif"
+    ></figure>
+<p>The purpose of our spring arm is to prevent the camera from clipping through walls, pushing the camera closer or towards the center.
+It currently uses three line traces: one from the player&rsquo;s head to the camera, one from the camera to straight down, and one from the player to the right vector.</p>
+<p>The ray shooting from the head will push the camera to the ray&rsquo;s collision point, but the ray shooting right from the player will push the camera to the center of the player if it colides.</p>
+
+
+
+
+
+<div
+  id="accordion-cb2b88f4af1ddeb2d8ce0af3ab016034"
+  class="space-y-2"
+  data-accordion="open"
+  data-accordion-separated="true"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+<path fill="currentColor"  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span>
+      
+      <span>Code Breakdown</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="raytrace%20collision%20code.png"
+    ></figure>
+<pre><code>The linetrace collision for the springarm is divided into 3 parts. 
+</code></pre>
+<ul>
+<li>
+<p>The first linetrace is to see the location of the wall hit. The trace starts above the players head. this is done by getting the actor location and adding (15, 0, 150) to move it above the players head
+The trace ends 300 centimeters behind the player by subtracting (300, -90, -35) to the actor location and plugging that into the end.</p>
+<p>The outhit location is then used to make a new camera offset. I get the actor location, subtracted that by the outhit location to get the length, I then subtract it by 12,12,12 to make the location land before the wall. (if you get the exact location the camera clips through). I unrotate the vector and that is our new desired camera offset.</p>
+</li>
+<li>
+<p>The second linetrace shoots down from where the camera normally would be without collision, and that sees if there is a floor. If there isn’t a floor, it spring arms. This method is planned to change in the future when we implement tags.</p>
+</li>
+<li>
+<p>The third linetrace shoots off to the right to prevent the camera from clipping to the right side of a wall. When the line collides, it brings the camera to the center of the player.</p>
+</li>
+</ul>
+<!-- 
+
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code` -->
+
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-cb2b88f4af1ddeb2d8ce0af3ab016034 > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+
+<style>
+  #accordion-cb2b88f4af1ddeb2d8ce0af3ab016034 details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-cb2b88f4af1ddeb2d8ce0af3ab016034 details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+
+
+<h2 class="relative group">Camera States
+    <div id="camera-states" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#camera-states" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>My camera switches on an enum between various states such as Looking, Fixed Camera, Peek left, Peek Right, Crack Look, and a death cutscene similar to fixed camera. This system has been easy for my team to follow along and adjust elements if needs be.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="alt text"
+    width="1280"
+    height="989"
+    src="/lantern_of_souls/camera%20states_hu_ba38d4e559333ab5.png"
+    srcset="/lantern_of_souls/camera%20states_hu_ba38d4e559333ab5.png 800w, /lantern_of_souls/camera%20states.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/lantern_of_souls/camera%20states.png"></figure>
+
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="alt text"
+    width="849"
+    height="448"
+    src="/lantern_of_souls/camera%20states%202_hu_239fbe6140dfed66.png"
+    srcset="/lantern_of_souls/camera%20states%202_hu_239fbe6140dfed66.png 800w, /lantern_of_souls/camera%20states%202.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/lantern_of_souls/camera%20states%202.png"></figure>
+</p>
+
+
+
+
+
+<div
+  id="accordion-91483ad0d1f7f02c9a9a3ef69e630dc1"
+  class="space-y-2"
+  data-accordion="open"
+  data-accordion-separated="true"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+      <span>Looking</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="walking%20camera3.png"
+    ></figure>
+
+Normal Looking is how the looking camera typically works. The desired camera offset changes continuously depending on collisions with walls. If the desired camera offset is different from the actual camera offset, the actual offset will lerp to the desired camera offset.This accounts for changes with wall collisions</p>
+<p>Lerp into normal looking is how the looking camera works if we need to interpolate into the looking camera. This happens if we need to transition from another camera mode like Fixed Camera.</p>
+
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-91483ad0d1f7f02c9a9a3ef69e630dc1 > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+
+<style>
+  #accordion-91483ad0d1f7f02c9a9a3ef69e630dc1 details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-91483ad0d1f7f02c9a9a3ef69e630dc1 details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+
+
+
+
+
+
+<div
+  id="accordion-53e12720f626eac48c913c71acfc33ac"
+  class="space-y-2"
+  data-accordion="open"
+  data-accordion-separated="true"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+      <span>Fixed</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="fixed%20camera.png"
+    ></figure>
+
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="fixed%20camera.gif"
+    ></figure>
+</p>
+<p>This is a camera that stays in a set position. You can choose to lerp to it or not. Typically used for interactables or cutscenes.</p>
+<p>It takes in an arrow within interactables and sets that to the desired camera location and rotation.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="fixed%20arrow.png"
+    ></figure>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="enter%20fixed%20camera.png"
+    ></figure>
+
+Above is a function that my team are able to easily call and plug in an arrow any time they make a new interactable. They are also able to decide if they want to lerp to the camera or cut to the camera.</p>
+
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-53e12720f626eac48c913c71acfc33ac > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+
+<style>
+  #accordion-53e12720f626eac48c913c71acfc33ac details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-53e12720f626eac48c913c71acfc33ac details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+
+
+
+
+
+
+<div
+  id="accordion-c9e7d31dc82516da5052fa726a3a6dbb"
+  class="space-y-2"
+  data-accordion="open"
+  data-accordion-separated="true"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+      <span>Peek Left/ Peek Right</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="peek.gif"
+    ></figure>
+<p>Peek left and peek right shift the camera to either side and allows the player to look around corners. This adds to the stealth a player can utilize. Q allows the player to peek to the left, and E allows the player to peek to the right. Those inputs are handled in the game controller.
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="peek%20code.png"
+    ></figure>
+
+Peek left and peek right simply lerp the actual camera offset to a position that is off to the side. It takes the current desired camera location and adds to the Y for peek left and subtracts for peek right. If there is a wall collision that is detected in the Camera orient however, it will interpolate off to the side of the collision location.</p>
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-c9e7d31dc82516da5052fa726a3a6dbb > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+
+<style>
+  #accordion-c9e7d31dc82516da5052fa726a3a6dbb details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-c9e7d31dc82516da5052fa726a3a6dbb details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+
+
+
+
+
+
+<div
+  id="accordion-fdb2f4a517f7efe867e13d001efa2a7a"
+  class="space-y-2"
+  data-accordion="open"
+  data-accordion-separated="true"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+      <span>Crack Look</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="cracklook.gif"
+    ></figure>
+
+Crack look started off as a fixed camera that would just switch to peek left and right, which were more fixed cameras. However we wanted the experience in the crack to be more interactive. This is first done by letting the player look around the crack with their mouse.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="qte.gif"
+    ></figure>
+
+Then with the quick time event, we wanted something dynamic, which the camera movements had to match.
+The player is able to look around the corners with the mouse, when the enemy is around the area, and decides to look inside the crack, a quick time event starts.</p>
+
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-fdb2f4a517f7efe867e13d001efa2a7a > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+
+<style>
+  #accordion-fdb2f4a517f7efe867e13d001efa2a7a details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-fdb2f4a517f7efe867e13d001efa2a7a details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+
+
+
+
+
+
+<div
+  id="accordion-96f8dc716de16a98b1a51ded3cf598e9"
+  class="space-y-2"
+  data-accordion="open"
+  data-accordion-separated="true"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+      <span>Quick Time Event</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="raytrace%20collision%20code.png"
+    ></figure>
+
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-96f8dc716de16a98b1a51ded3cf598e9 > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+
+<style>
+  #accordion-96f8dc716de16a98b1a51ded3cf598e9 details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-96f8dc716de16a98b1a51ded3cf598e9 details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+
 
           
           
@@ -550,33 +1200,16 @@
       <div class="flex justify-between pt-3">
         <span class="flex flex-col">
           
-            <a
-              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="/powerplant/">
-              <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;
-              </span>
-            </a>
-            
-              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time>
-              </span>
-            
-          
         </span>
         <span class="flex flex-col items-end">
           
             <a
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="/cupid_shooter/">
+              href="/powerplant/">
               <span class="leading-6">
                 &ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
-            
-              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time>
-              </span>
             
           
         </span>
@@ -687,6 +1320,23 @@
 
     </div>
     
+    
+      
+      
+      
+        
+      
+      
+        <div id="background-canvas" aria-hidden="true" class="pointer-events-none fixed inset-0 -z-20">
+          <img
+            src="/finalfishrender.png"
+            role="presentation"
+            loading="eager"
+            decoding="async"
+            class="nozoom h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-neutral/75 dark:bg-neutral-800/60"></div>
+        </div>
+      
     
   </body>
   

@@ -33,4 +33,18 @@ section.prose:has(> .not-prose.grid-balance-3) > .not-prose.grid-balance-3 {
   width: 100%;
 }
 
+
+
+
+
+main .prose:not(:has(.grid-balance)) {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+}
 /* Keep the intro paragraph at a readable line length */
+
+
+

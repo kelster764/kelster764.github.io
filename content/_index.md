@@ -16,7 +16,7 @@ Learn about my custom camera manager and player controls.
 
 {{< feature-grid columns="3" >}}
 
-{{< feature icon="ghost" title="PowerPlant" url="/powerplant/" label="Explore Game" >}}
+{{< feature icon="bomb" title="PowerPlant" url="/powerplant/" label="Explore Game" >}}
 ![assets](powerplant.png)
 Learn about my completely solo project.
 {{< /feature >}}
