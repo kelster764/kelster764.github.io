@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62444&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -34,7 +34,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:62444/lantern_of_souls/">
+  <link rel="canonical" href="http://localhost:1313/lantern_of_souls/">
   
   
   
@@ -44,7 +44,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:62444/lantern_of_souls/">
+  <meta property="og:url" content="http://localhost:1313/lantern_of_souls/">
 	<meta property="og:site_name" content="Kelly Harmon">
 	<meta property="og:title" content="Lantern of Souls">
 	<meta property="og:locale" content="en">
@@ -220,7 +220,7 @@
     "headline": "Lantern of Souls",
     
     "inLanguage": "en",
-    "url" : "http://localhost:62444/lantern_of_souls/",
+    "url" : "http://localhost:1313/lantern_of_souls/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -233,8 +233,8 @@
     
     
     
-    "mainEntityOfPage": "http://localhost:62444/lantern_of_souls/",
-    "wordCount":  846 
+    "mainEntityOfPage": "http://localhost:1313/lantern_of_souls/",
+    "wordCount":  1117 
   }]
   </script>
 
@@ -1067,6 +1067,77 @@ Crack look started off as a fixed camera that would just switch to peek left and
 
 Then with the quick time event, we wanted something dynamic, which the camera movements had to match.
 The player is able to look around the corners with the mouse, when the enemy is around the area, and decides to look inside the crack, a quick time event starts.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="enter%20crack%20look.png"
+    ></figure>
+
+This is the flow of logic within blueprint update camera. The structure here is similar to the other walking cameras, however instead of camera orient, we have Enter Crack Look, which handles the core logic differently.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="enter%20crack%20look.png"
+    ></figure>
+
+Enter Crack look can actually be called within the crack logic. The original rotation is the base rotation for the rest of the logic, and the crack forward vector is plugged into it. We set it to the crack Rotation so that this separate rotation can be plugged into the function in Blueprint update camera.</p>
+
+<h2 class="relative group">Normal Crack look around
+    <div id="normal-crack-look-around" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#normal-crack-look-around" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="qte%20not%20active.png"
+    ></figure>
+
+When the QTE is not active, we have the view where you can look around with your mouse. I grab the crack rotation and use delta rotator to get the difference between the original crack rotation and the control rotation. If the distance is greater than 10, it sets the desired camera offset to face the left, and if its less than -10 it goes to the right. If it’s between those values, it pulls back in the center.
+The input mouse is there, because if the mouse is fast enough, it won’t pull back to the center.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="change%20view.png"
+    ></figure>
+
+Afterwards, I set the view max and mins for the pitch and yaw. This locks how far left/right, and up/down you can go with your mouse.</p>
+
+<h2 class="relative group">When QTE active
+    <div id="when-qte-active" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#when-qte-active" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="alt text"
+    src="qte%20active.png"
+    ></figure>
+<p>When there&rsquo;s a QTE, there’s one more boolean for QTE dodging, which happens when the player dodges after successfully doing the QT task.
+When QTE dodging is active, the QTE direction is chosen by random in the GI_latern, which determines what side of the crack the camera will shift to.</p>
 
   </div>
 </details>
@@ -1085,89 +1156,6 @@ The player is able to look around the corners with the mouse, when the enemy is 
     transition: transform 200ms ease-in-out;
   }
   #accordion-fdb2f4a517f7efe867e13d001efa2a7a details[data-accordion-item][open] > summary .accordion-chevron {
-    transform: rotate(0deg);
-  }
-</style>
-
-
-
-
-
-
-
-<div
-  id="accordion-96f8dc716de16a98b1a51ded3cf598e9"
-  class="space-y-2"
-  data-accordion="open"
-  data-accordion-separated="true"
->
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-<details
-  class="group rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden"
-  data-accordion-item
-  
->
-  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-    <span class="flex items-center gap-2">
-      
-      <span>Quick Time Event</span>
-    </span>
-    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
-      <span class="relative block icon"><svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 20 20"
-  fill="currentColor"
-  aria-hidden="true"
->
-  <path
-    fill-rule="evenodd"
-    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-    clip-rule="evenodd"
-  />
-</svg>
-</span>
-    </span>
-  </summary>
-<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
-    <figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="alt text"
-    src="raytrace%20collision%20code.png"
-    ></figure>
-
-  </div>
-</details>
-
-</div>
-
-<style>
-  #accordion-96f8dc716de16a98b1a51ded3cf598e9 > details + details {
-    margin-top: 0.5rem;
-  }
-</style>
-
-<style>
-  #accordion-96f8dc716de16a98b1a51ded3cf598e9 details[data-accordion-item] > summary .accordion-chevron {
-    transform: rotate(-90deg);
-    transition: transform 200ms ease-in-out;
-  }
-  #accordion-96f8dc716de16a98b1a51ded3cf598e9 details[data-accordion-item][open] > summary .accordion-chevron {
     transform: rotate(0deg);
   }
 </style>
@@ -1200,12 +1188,21 @@ The player is able to look around the corners with the mouse, when the enemy is 
       <div class="flex justify-between pt-3">
         <span class="flex flex-col">
           
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/powerplant/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;The PowerPlant
+              </span>
+            </a>
+            
+          
         </span>
         <span class="flex flex-col items-end">
           
             <a
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="/powerplant/">
+              href="/cupid_shooter/">
               <span class="leading-6">
                 &ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>

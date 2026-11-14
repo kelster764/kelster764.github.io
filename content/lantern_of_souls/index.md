@@ -110,15 +110,34 @@ Peek left and peek right simply lerp the actual camera offset to a position that
 Then with the quick time event, we wanted something dynamic, which the camera movements had to match.
 The player is able to look around the corners with the mouse, when the enemy is around the area, and decides to look inside the crack, a quick time event starts. 
 
+  ![alt text](<enter crack look.png>)
+  This is the flow of logic within blueprint update camera. The structure here is similar to the other walking cameras, however instead of camera orient, we have Enter Crack Look, which handles the core logic differently. 
+
+
+
+  ![alt text](<enter crack look.png>)
+  Enter Crack look can actually be called within the crack logic. The original rotation is the base rotation for the rest of the logic, and the crack forward vector is plugged into it. We set it to the crack Rotation so that this separate rotation can be plugged into the function in Blueprint update camera.
+
+Normal Crack look around
+-
+
+  ![alt text](<qte not active.png>)
+  When the QTE is not active, we have the view where you can look around with your mouse. I grab the crack rotation and use delta rotator to get the difference between the original crack rotation and the control rotation. If the distance is greater than 10, it sets the desired camera offset to face the left, and if its less than -10 it goes to the right. If it’s between those values, it pulls back in the center. 
+The input mouse is there, because if the mouse is fast enough, it won’t pull back to the center.
+
+
+  ![alt text](<change view.png>)
+Afterwards, I set the view max and mins for the pitch and yaw. This locks how far left/right, and up/down you can go with your mouse.
+
+When QTE active
+-
+ ![alt text](<qte active.png>)
+
+  When there's a QTE, there’s one more boolean for QTE dodging, which happens when the player dodges after successfully doing the QT task. 
+When QTE dodging is active, the QTE direction is chosen by random in the GI_latern, which determines what side of the crack the camera will shift to.
 
 
   {{< /accordionItem >}}
 {{< /accordion >}}
 
 
-{{< accordion mode="open" separated=true >}}
-  {{< accordionItem title="Quick Time Event" open=false >}}
-  ![alt text](<raytrace collision code.png>)
-
-  {{< /accordionItem >}}
-{{< /accordion >}}

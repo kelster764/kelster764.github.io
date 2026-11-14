@@ -3,27 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:62444/</loc>
+    <loc>http://localhost:1313/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62444/bonevoyage/</loc>
+    <loc>http://localhost:1313/bonevoyage/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62444/cupid_shooter/</loc>
+    <loc>http://localhost:1313/cupid_shooter/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62444/powerplant/</loc>
+    <loc>http://localhost:1313/lantern_of_souls/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62444/lantern_of_souls/</loc>
+    <loc>http://localhost:1313/powerplant/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
