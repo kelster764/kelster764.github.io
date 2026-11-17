@@ -1,4 +1,4 @@
-Hello there! I am a game designer and programmer with an artistic background in Illustration and shading. My primary focus in games is character, camera, and control. 
+Hello there! I am a 3C game designer and programmer with an artistic background in Illustration and shading. My primary focus in games is character, camera, and control. 
 
 Read my resume here
 -

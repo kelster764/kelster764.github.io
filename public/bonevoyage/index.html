@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=64859&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -34,7 +34,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:64859/bonevoyage/">
+  <link rel="canonical" href="http://localhost:1313/bonevoyage/">
   
   
   
@@ -44,7 +44,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:64859/bonevoyage/">
+  <meta property="og:url" content="http://localhost:1313/bonevoyage/">
 	<meta property="og:site_name" content="Kelly Harmon">
 	<meta property="og:title" content="BoneVoyage">
 	<meta property="og:locale" content="en">
@@ -220,7 +220,7 @@
     "headline": "BoneVoyage",
     
     "inLanguage": "en",
-    "url" : "http://localhost:64859/bonevoyage/",
+    "url" : "http://localhost:1313/bonevoyage/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -233,8 +233,8 @@
     
     
     
-    "mainEntityOfPage": "http://localhost:64859/bonevoyage/",
-    "wordCount":  353 
+    "mainEntityOfPage": "http://localhost:1313/bonevoyage/",
+    "wordCount":  342 
   }]
   </script>
 
@@ -518,18 +518,9 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          
-<h2 class="relative group">What is BoneVoyage?
-    <div id="what-is-bonevoyage" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-is-bonevoyage" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
-<p>You are a train conductor checking for tickets in a train to the afterlife. If someone doesn&rsquo;t have their ticket, you can grab them by the neck and throw them off the train! Or you can just do that if you feel like it.</p>
-<p>Unfortuneatly, our code got lost, but I will do my best to explain what I did and my thought process.</p>
+          <p>What is BoneVoyage?</p>
+<p>You are a train conductor checking tickets on a train to the afterlife. If someone doesn&rsquo;t have a ticket, you can grab them by the neck and throw them off the train! Or you can just do that if you feel like it.</p>
+<p>Unfortunately, our code got lost, but I will do my best to explain what I did and my thought process.</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -554,16 +545,7 @@
     srcset="/bonevoyage/bonevoyage2.gif 800w, /bonevoyage/bonevoyage2.gif 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/bonevoyage/bonevoyage2.gif"></figure>
-
-<h2 class="relative group">Dialogue System
-    <div id="dialogue-system" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#dialogue-system" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
+<p>Dialogue System</p>
 <p><figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -585,41 +567,20 @@
     alt="alt text"
     width="2037"
     height="864"
-    src="/bonevoyage/psuedocode_hu_e3f1c260d6b4d634.png"
-    srcset="/bonevoyage/psuedocode_hu_e3f1c260d6b4d634.png 800w, /bonevoyage/psuedocode_hu_f670474968d6773e.png 1280w"
+    src="/bonevoyage/psuedocode_hu_8612345b816e5306.png"
+    srcset="/bonevoyage/psuedocode_hu_8612345b816e5306.png 800w, /bonevoyage/psuedocode_hu_2eb668ab4966ac64.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/bonevoyage/psuedocode.png"></figure>
 </p>
 <ul>
-<li>
-<p>Within our dialogue system, I wanted the words to print out like a type writer, and I only had it print 2 sentences at a time to have that satisfying feel that visual novels have.</p>
-</li>
-<li>
-<p>We had an excel spreadsheet with all of the dialogue for the different characters and situations.</p>
-</li>
-<li>
-<p>Once the dialogue is grabbed, we enter a while loop, thank is while the length of the dialogue doesn&rsquo;t equal 0, keep going.</p>
-</li>
-<li>
-<p>We then grab the first 2 sentences of the dialogue and put it in a seperate text, and then delete it from the original dialogue.</p>
-</li>
-<li>
-<p>In the seperate text, I do a similar process. While the seperate text is not empty, take a single character and add it to the output. This is what makes the typing effect.</p>
-</li>
-<li>
-<p>Once that inner while done, we go back to the outer while loop and see if there is more in the original dialogue.</p>
-</li>
+<li>Within our dialogue system, I wanted the words to print out like a typewriter, and I had them print only two sentences at a time to create that satisfying feel that visual novels have.</li>
+<li>We had an Excel spreadsheet with all of the dialogue for the different characters and situations.</li>
+<li>Once the dialogue is retrieved, we enter a while loop. While the dialogue&rsquo;s length doesn&rsquo;t equal zero, we keep going.</li>
+<li>We then grab the first two sentences of the dialogue and put them in a separate text, then delete them from the original dialogue.</li>
+<li>In the separate text, I use a similar process. While the separate text is not empty, I take a single character and add it to the output. This is what creates the typing effect.</li>
+<li>Once that inner while loop is done, we go back to the outer while loop and check whether there is more in the original dialogue.</li>
 </ul>
-
-<h2 class="relative group">Interaction
-    <div id="interaction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#interaction" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
+<p>Interaction</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -632,17 +593,12 @@
     srcset="/bonevoyage/interact.gif 800w, /bonevoyage/interact.gif 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/bonevoyage/interact.gif"></figure>
-<p>For press E to interact, you hover over a skeleton you want to interact with. When the mouse is over the skeleton, they get a white highlight to indicate you are in fact hovering over him. Once you press E, you are lerped into a fixed position where you can either uninteract or strangle them.</p>
+<p>To interact, you hover over a skeleton. When the mouse is over the skeleton, they get a white highlight to indicate that you are hovering over them. Once you press E, you are lerped into a fixed position where you can either stop interacting or strangle them.</p>
+<p>Some problems I handled were:</p>
 <ul>
-<li>
-<p>The camera had to smoothly interpolate to a fixed position</p>
-</li>
-<li>
-<p>Upon the camera lerping into a fixed position, the location of the player also had to change to the location of the camera.</p>
-</li>
-<li>
-<p>However, if the player is lerped to a bad spot, they could easily clip through a bench if we are not careful.</p>
-</li>
+<li>The camera had to smoothly interpolate to a fixed position.</li>
+<li>When the camera lerped into a fixed position, the player&rsquo;s location also had to change to match the camera&rsquo;s location.</li>
+<li>However, if the player was lerped to a bad spot, they could easily clip through a bench, so we had to be careful.</li>
 </ul>
 <p>I would consider BoneVoyage a strong predecessor to my camera work in Lantern of Souls.</p>
 
