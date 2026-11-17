@@ -7,6 +7,9 @@ showReadingTime: false
 
 What does our camera do?
 -
+
+[Jump to Player Blueprints](#contributions-to-the-player-blueprint)
+
 Lantern of Souls is our current senior capstone, and I was tasked with designing the custom camera manager that fit our needs.
 Our camera is a dynamic 3rd person camera with our player on the third, and his soul to his side. 
 The camera needed to be able to handle:
@@ -139,5 +142,45 @@ When QTE dodging is active, the QTE direction is chosen by random in the GI_late
 
   {{< /accordionItem >}}
 {{< /accordion >}}
+
+
+Contributions to the player blueprint
+-
+Our player has a soul companion that aids him throughout the level. With that being said, one of the jobs of the soul is to alert the player that a gaurd is near by. When a gaurd is nearby, the soul will hide by the player.
+
+
+ ![alt text](<soul locations.gif>)
+The soul will hide in different sides of the player, specifically  on the opposite side of where the gaurd is. The sudden movement of the soul moving alerts the player that something is happening, then the side he's on helps the player think about their next move.
+
+
+ ![alt text](<soul wall.gif>)
+
+We were having an issue where the soul would clip into the wall on the right side, so I also made it so where if a linetrace collides on a wall, the soul will move closer to the player.
+
+However, since both of these handles the soul location, I had to incorporate both of them into my logic. 
+
+{{< accordion mode="open" separated=true >}}
+  {{< accordionItem title="Code Breakdown" icon="code" open=false >}}
+
+ ![alt text](<soul_placement.png>)
+I first have a custom event that changes the desired soul position, which is used throughout the code. 
+
+ ![alt text](<soul_placement1.png>)
+We then check if the soul is in a cautious state, and if they are not crouching. (crouching has one set location)
+
+
+![alt text](<soul_placement6.png>)
+ ![alt text](<soul_placement2.png>)
+ If those are true, we then check which side the gaurd is relative to the player(Thiago). The soul has a system that points to the closest gaurd, so we take the rotation of the soul and subtract that from the front vector of the gaurd to see what angle the sould is relative to the player. We then take the z float and see which float range it is within, using the soul placement custom event when one of them is true.  
+ ![alt text](<soul_placement3.png>)
+ 
+ If the soul is in a cautious state, it will then quiver in fear using some sine and cosine waves that I am adding to the desired location.
+ ![alt text](<soul_placement4.png>)
+ If the soul is not in a cautious state, it will send a linetrace to the right to see if there is a collision. and then lerps next to the player.
+
+
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
 
 

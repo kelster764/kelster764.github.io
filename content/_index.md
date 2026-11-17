@@ -1,4 +1,4 @@
-Hello there! I am a game designer and programmer with an artistic background in Illustration and shading.
+Hello there! I am a game designer and programmer with an artistic background in Illustration and shading. My primary focus in games is character, camera, and control. 
 
 
 {{< feature-grid columns="3" >}}
@@ -16,9 +16,11 @@ Learn about my custom camera manager and player controls.
 
 {{< feature-grid columns="3" >}}
 
-{{< feature icon="bomb" title="PowerPlant" url="/powerplant/" label="Explore Game" >}}
-![assets](powerplant.png)
-Learn about my completely solo project.
+
+
+{{< feature icon="heart" title="Cupid Shooter" url="/cupid_shooter/" label="Explore Game" >}}
+![assets](cupid_cover.png)
+Learn about my system for managing couples.
 {{< /feature >}}
 
 {{< feature icon="skull-crossbones" title="Bonevoyage" url="/bonevoyage/" label="Explore Game" >}}
@@ -26,9 +28,10 @@ Learn about my completely solo project.
 Learn about my camera and dialogue system.
 {{< /feature >}}
 
-{{< feature icon="heart" title="Cupid Shooter" url="/cupid_shooter/" label="Explore Game" >}}
-![assets](cupid_cover.png)
-Learn about my system for managing couples.
+
+{{< feature icon="bomb" title="PowerPlant" url="/powerplant/" label="Explore Game" >}}
+![assets](powerplant.png)
+Learn about my completely solo project.
 {{< /feature >}}
 
 <!-- 
