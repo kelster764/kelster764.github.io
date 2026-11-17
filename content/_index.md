@@ -1,5 +1,11 @@
 Hello there! I am a game designer and programmer with an artistic background in Illustration and shading. My primary focus in games is character, camera, and control. 
 
+Read my resume here
+-
+
+{{< button href="resume" target="_self" >}}
+Resume
+{{< /button >}}
 
 {{< feature-grid columns="3" >}}
 
